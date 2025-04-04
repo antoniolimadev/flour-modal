@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import '../styles/the-modal.css';
 
 defineProps<{ msg: string }>();
 
