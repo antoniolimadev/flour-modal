@@ -1,1 +1,1 @@
-export { default as TheModal } from "./TheModal.vue";
+export { default as FlourModal } from "./TheModal.vue";

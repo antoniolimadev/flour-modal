@@ -1,5 +1,5 @@
 import type {App} from "vue";
-import { TheModal as FlourModal } from "./components";
+import { FlourModal } from "./components";
 
 export default {
     install: (app: App, options: { }) => {
