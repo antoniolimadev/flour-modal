@@ -1,11 +1,11 @@
 import type {App} from "vue";
-import { FlourModal } from "./components";
+import { useModal } from "./composables/useModal";
+import type { UseModalInstance } from "./types";
 
 export default {
-    install: (app: App, options: { }) => {
-        app.component("FlourModal", FlourModal);
-        app.provide("FlourModal", options);
+    install: (app: App) => {
+        let instance = useModal();
+        app.config.globalProperties.$flourModal = instance;
+        app.provide('$flourModal', instance as UseModalInstance);
     },
 };
-
-export { FlourModal };
