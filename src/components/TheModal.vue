@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import '../styles/the-modal.scss';
-import { onMounted, ref } from "vue";
+import { onMounted, ref, useTemplateRef } from "vue";1
+import { onClickOutside, onKeyStroke } from "@vueuse/core";
 
 const props = defineProps<{
     title?: string,
@@ -21,13 +22,19 @@ let closeModal = (): void => {
         props.destroy();
     },150);
 };
+
+const target = useTemplateRef<HTMLElement>('target');
+
+onClickOutside(target, () => closeModal());
+onKeyStroke('Escape', () => closeModal());
+
 </script>
 
 <template>
     <Transition name="modal">
         <div v-if="isVisible" class="modal__mask">
 
-            <div class="modal">
+            <div class="modal" ref="target">
                 <div class="modal__body">
                     <div class="modal__body-inner">
                         <h3 class="modal__title">

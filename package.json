@@ -29,6 +29,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^13.1.0",
     "vue": "^3.0.0"
   },
   "peerDependencies": {
