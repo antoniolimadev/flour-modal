@@ -1,0 +1,117 @@
+.modal {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    text-align: left;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 32rem;
+    margin: 0.75rem;
+    font-family: InterVariable, system-ui, sans-serif;
+
+    &__mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__body {
+        background-color: #ffffff;
+        padding: 1.25rem 1rem 1rem;
+
+        @media (min-width: 640px) {
+            padding: 1.5rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__body-inner {
+        margin-top: 0.75rem;
+        text-align: center;
+
+        @media (min-width: 640px) {
+            margin-top: 0;
+            margin-left: 1rem;
+            text-align: left;
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #111827;
+    }
+
+    &__message {
+        margin-top: 0.5rem;
+    }
+
+    &__message-text {
+        font-size: 1rem;
+        color: #6b7280;
+    }
+
+    &__footer {
+        padding: 0.75rem 1rem;
+
+        @media (min-width: 640px) {
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 1rem 1.5rem;
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+        border-radius: 0.375rem;
+        border: none;
+        background-color: #374151;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: white;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: black;
+        }
+
+        @media (min-width: 640px) {
+            margin-left: 0.75rem;
+            width: auto;
+        }
+    }
+
+    /* transitions */
+
+    &-enter-from,
+    &-leave-to {
+        opacity: 0;
+        scale: 115%;
+    }
+
+    &-enter-active {
+        transition: opacity 300ms, scale 300ms;
+    }
+
+    &-leave-active {
+        transition: opacity 100ms, scale 100ms;
+    }
+
+    &-enter-to,
+    &-leave-from {
+        opacity: 1;
+        scale: 100%;
+    }
+}
