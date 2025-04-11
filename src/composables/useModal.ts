@@ -10,7 +10,8 @@ export const useModal = (): UseModalInstance => {
             const vNode = h(
                 FlourModal,
                 {
-                    msg: options.msg,
+                    title: options.title,
+                    message: options.message,
                     destroy: this.close
                 },
                 options.child !== null ? h(options.child) : {}
