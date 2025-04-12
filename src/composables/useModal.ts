@@ -14,7 +14,9 @@ export const useModal = (): UseModalInstance => {
                     message: options.message,
                     destroy: this.close
                 },
-                options.child !== null ? h(options.child) : {}
+                options.child !== null
+                    ? { default: () => [ h(options.child)] }
+                    : {}
             );
 
             container = document.createElement('div');

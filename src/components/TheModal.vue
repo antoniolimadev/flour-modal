@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import '../styles/the-modal.scss';
-import { onMounted, ref, useTemplateRef } from "vue";1
+import '@/styles/the-modal.scss';
+import { onMounted, provide, ref, useTemplateRef } from "vue";1
 import { onClickOutside, onKeyStroke } from "@vueuse/core";
 
 const props = defineProps<{
@@ -22,6 +22,8 @@ let closeModal = (): void => {
         props.destroy();
     },150);
 };
+
+provide('closeModal', closeModal);
 
 const target = useTemplateRef<HTMLElement>('target');
 
