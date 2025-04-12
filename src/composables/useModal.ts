@@ -12,6 +12,7 @@ export const useModal = (): UseModalInstance => {
                 {
                     title: options.title,
                     message: options.message,
+                    defaultCTA: options.defaultCTA,
                     destroy: this.close
                 },
                 options.child !== null

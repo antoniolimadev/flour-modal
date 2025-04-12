@@ -3,6 +3,7 @@ import type { ComponentInternalInstance } from "@vue/runtime-core";
 export interface ModalOptions {
     title?: string,
     message?: string,
+    defaultCTA?: boolean,
     child?: any
 }
 

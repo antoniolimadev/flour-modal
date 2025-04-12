@@ -3,11 +3,17 @@ import '@/styles/the-modal.scss';
 import { onMounted, provide, ref, useTemplateRef } from "vue";1
 import { onClickOutside, onKeyStroke } from "@vueuse/core";
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     title?: string,
     message?: string,
+    defaultCTA?: boolean,
     destroy: any,
-}>();
+}>(), {
+    title: '',
+    message: '',
+    defaultCTA: true,
+    destroy: () => {},
+});
 
 const isVisible = ref(false);
 
@@ -52,7 +58,7 @@ onKeyStroke('Escape', () => closeModal());
                     </div>
                 </div>
 
-                <div class="modal__footer">
+                <div v-if="defaultCTA" class="modal__footer">
                     <button type="button" @click="closeModal" class="modal__button">
                         OK
                     </button>

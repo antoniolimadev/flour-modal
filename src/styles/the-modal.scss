@@ -29,8 +29,7 @@
         padding: 1.25rem 1rem 1rem;
 
         @media (min-width: 640px) {
-            padding: 1.5rem;
-            padding-bottom: 1rem;
+            padding: 1.5rem 2rem 1rem;
         }
     }
 
@@ -40,7 +39,6 @@
 
         @media (min-width: 640px) {
             margin-top: 0;
-            margin-left: 1rem;
             text-align: left;
         }
     }
