@@ -9,3 +9,6 @@ export default {
         app.provide('$flourModal', instance as UseModalInstance);
     },
 };
+
+
+export { useModal as fModal }

@@ -12,7 +12,8 @@ const __dirname = dirname(__filename);
 export default defineConfig({
   plugins: [vue(), tailwindcss(), dts({
     rollupTypes: true,
-    tsconfigPath: "./tsconfig.app.json"
+    tsconfigPath: "./tsconfig.app.json",
+    copyDtsFiles: true,
   })],
   build: {
     lib: {

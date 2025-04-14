@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import '@/styles/the-modal.scss';
-import { onMounted, provide, ref, useTemplateRef } from "vue";1
+import { onMounted, provide, ref, useTemplateRef } from "vue";
 import { onClickOutside, onKeyStroke } from "@vueuse/core";
 
 const props = withDefaults(defineProps<{
