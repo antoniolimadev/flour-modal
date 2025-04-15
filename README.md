@@ -78,6 +78,14 @@ import { inject } from "vue";
 const close = inject('closeModal');
 ```
 
+## Available props
+Name | Type      | Optional | Default
+:--|-----------|----------|--
+title | String    | Yes | - 
+message | String    | Yes | -
+child | Component | Yes | -
+defaultCTA | boolean   | Yes | true
+
 ## Making the modal available globally
 If you're going to use modals in many different places then it might be worth it to make the modal available globally:
 ```javascript

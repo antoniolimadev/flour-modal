@@ -21,8 +21,24 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "src/components/"
+    "src/components/",
+    "src/types/"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antoniolimadev/flour-modal"
+  },
+  "keywords": [
+    "vue",
+    "modal",
+    "alert",
+    "popup"
+  ],
+  "author": "Antonio Lima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antoniolimadev/flour-modal/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
