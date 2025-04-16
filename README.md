@@ -1,13 +1,17 @@
 # FlourModal
 An all purpose modal plugin for Vue 3. Easy to use and customise, with a modern but minimalist design. And you can use your own components alongside it!
 
+![NPM Downloads](https://img.shields.io/npm/d18m/flour-modal)
+[![npm-version](https://badgen.net/npm/v/flour-modal)](https://www.npmjs.com/package/flour-modal)
+![license](https://badgen.net/github/license/antoniolimadev/flour-modal)
+
 ## Installation
 ```
 npm install flour-modal
 ```
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4b8129dd-ab1b-4258-ba41-d1918e56cb66">
+  <img src="https://hello.antoniolima.co/images/blog/modal-example.png" alt="FlourModal">
 </p>
 
 ## Usage
