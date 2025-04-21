@@ -86,6 +86,14 @@
             background-color: black;
         }
 
+        &--error {
+            background-color: #e7000b;
+
+            &:hover {
+                background-color: #fd323c;
+            }
+        }
+
         @media (min-width: 640px) {
             margin-left: 0.75rem;
             width: auto;
