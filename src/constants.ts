@@ -1,4 +1,2 @@
-export const MODAL_INTENT = {
-    DEFAULT: 'default',
-    ERROR: 'error',
-}
+export const INTENT_DEFAULT = 'default';
+export const INTENT_ERROR = 'error';

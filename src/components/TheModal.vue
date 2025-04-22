@@ -2,19 +2,19 @@
 import '@/styles/the-modal.scss';
 import {computed, onMounted, provide, ref, useTemplateRef} from "vue";
 import { onClickOutside, onKeyStroke } from "@vueuse/core";
-import type { ModalIntent } from "../types";
-import { MODAL_INTENT } from "../constants";
+import type { ModalIntent } from "../types/intent";
+import { INTENT_DEFAULT, INTENT_ERROR } from "../constants";
 
 const props = withDefaults(defineProps<{
     title?: string,
     message?: string,
-    intent: ModalIntent,
+    intent?: ModalIntent,
     defaultCTA?: boolean,
     destroy: any,
 }>(), {
     title: '',
     message: '',
-    intent: MODAL_INTENT.DEFAULT,
+    intent: INTENT_DEFAULT,
     defaultCTA: true,
     destroy: () => {},
 });
@@ -43,9 +43,9 @@ onKeyStroke('Escape', () => closeModal());
 const intentClass = computed(() => {
     switch (props.intent) {
         default:
-        case MODAL_INTENT.DEFAULT:
+        case INTENT_DEFAULT:
             return 'modal__button--default';
-        case MODAL_INTENT.ERROR:
+        case INTENT_ERROR:
             return 'modal__button--error';
     }
 })

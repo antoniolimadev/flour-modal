@@ -1,7 +1,7 @@
 import { h, render } from 'vue';
 import { FlourModal } from "../components";
 import type { ModalOptions, UseModalInstance } from "../types";
-import { MODAL_INTENT } from "../constants";
+import { INTENT_ERROR } from "../constants";
 
 export const useModal = (): UseModalInstance => {
     let container: HTMLDivElement | null = null;
@@ -39,7 +39,7 @@ export const useModal = (): UseModalInstance => {
             if (!container) {
                 return this.createModal({
                     ...options,
-                    intent: MODAL_INTENT.ERROR,
+                    intent: INTENT_ERROR,
                 });
             }
         },

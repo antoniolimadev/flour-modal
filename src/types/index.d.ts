@@ -1,14 +1,10 @@
 import type { ComponentInternalInstance } from "@vue/runtime-core";
-import { MODAL_INTENT } from "../constants";
-
-export type ModalIntent =
-    MODAL_INTENT.DEFAULT |
-    MODAL_INTENT.ERROR;
+import type { ModalIntent } from "./intent";
 
 export interface ModalOptions {
     title?: string,
     message?: string,
-    intent: ModalIntent,
+    intent?: ModalIntent,
     defaultCTA?: boolean,
     child?: any
 }
