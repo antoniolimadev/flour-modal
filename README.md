@@ -3,7 +3,7 @@ An all purpose modal plugin for Vue 3. Easy to use and customise, with a modern 
 
 ![NPM Downloads](https://img.shields.io/npm/d18m/flour-modal)
 [![npm-version](https://badgen.net/npm/v/flour-modal)](https://www.npmjs.com/package/flour-modal)
-![license](https://badgen.net/github/license/antoniolimadev/flour-modal)
+![license](https://img.shields.io/github/license/antoniolimadev/flour-modal)
 
 ## Installation
 ```
@@ -88,7 +88,8 @@ Name | Type      | Optional | Default
 title | String    | Yes | - 
 message | String    | Yes | -
 child | Component | Yes | -
-defaultCTA | boolean   | Yes | true
+defaultCTA | boolean   | Yes | `true`
+intent | String | Yes | `default`
 
 ## Making the modal available globally
 If you're going to use modals in many different places then it might be worth it to make the modal available globally:

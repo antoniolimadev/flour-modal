@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import '@/styles/the-modal.scss';
-import { onMounted, provide, ref, useTemplateRef } from "vue";
+import {computed, onMounted, provide, ref, useTemplateRef} from "vue";
 import { onClickOutside, onKeyStroke } from "@vueuse/core";
+import type { ModalIntent } from "../types/intent";
+import { INTENT_DEFAULT, INTENT_ERROR } from "../constants";
 
 const props = withDefaults(defineProps<{
     title?: string,
     message?: string,
+    intent?: ModalIntent,
     defaultCTA?: boolean,
     destroy: any,
 }>(), {
     title: '',
     message: '',
+    intent: INTENT_DEFAULT,
     defaultCTA: true,
     destroy: () => {},
 });
@@ -36,6 +40,16 @@ const target = useTemplateRef<HTMLElement>('target');
 onClickOutside(target, () => closeModal());
 onKeyStroke('Escape', () => closeModal());
 
+const intentClass = computed(() => {
+    switch (props.intent) {
+        default:
+        case INTENT_DEFAULT:
+            return 'modal__button--default';
+        case INTENT_ERROR:
+            return 'modal__button--error';
+    }
+})
+
 </script>
 
 <template>
@@ -59,7 +73,7 @@ onKeyStroke('Escape', () => closeModal());
                 </div>
 
                 <div v-if="defaultCTA" class="modal__footer">
-                    <button type="button" @click="closeModal" class="modal__button">
+                    <button type="button" @click="closeModal" class="modal__button" :class="intentClass">
                         OK
                     </button>
                 </div>
