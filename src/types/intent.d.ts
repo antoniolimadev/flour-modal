@@ -1,4 +1,4 @@
-import { INTENT_DEFAULT, INTENT_ERROR } from "../constants";
+import { INTENT_DEFAULT, INTENT_ERROR } from "../constants/intent";
 
 
 export type ModalIntent =

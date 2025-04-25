@@ -1,7 +1,7 @@
 {
   "name": "flour-modal",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "module": "dist/flour-modal.es.js",
   "main": "dist/flour-modal.umd.js",
@@ -22,7 +22,8 @@
   "files": [
     "dist",
     "src/components/",
-    "src/types/"
+    "src/types/",
+    "src/constants/"
   ],
   "repository": {
     "type": "git",

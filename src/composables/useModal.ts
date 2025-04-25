@@ -1,7 +1,7 @@
 import { h, render } from 'vue';
 import { FlourModal } from "../components";
 import type { ModalOptions, UseModalInstance } from "../types";
-import { INTENT_ERROR } from "../constants";
+import { INTENT_ERROR } from "../constants/intent";
 
 export const useModal = (): UseModalInstance => {
     let container: HTMLDivElement | null = null;

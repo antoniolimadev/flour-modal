@@ -3,7 +3,7 @@ import '@/styles/the-modal.scss';
 import {computed, onMounted, provide, ref, useTemplateRef} from "vue";
 import { onClickOutside, onKeyStroke } from "@vueuse/core";
 import type { ModalIntent } from "../types/intent";
-import { INTENT_DEFAULT, INTENT_ERROR } from "../constants";
+import { INTENT_DEFAULT, INTENT_ERROR } from "../constants/intent";
 
 const props = withDefaults(defineProps<{
     title?: string,
