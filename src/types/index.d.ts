@@ -6,6 +6,7 @@ export interface ModalOptions {
     message?: string,
     intent?: ModalIntent,
     defaultCTA?: boolean,
+    defaultCTALabel?: string,
     child?: any
 }
 

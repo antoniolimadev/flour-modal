@@ -11,10 +11,7 @@ export const useModal = (): UseModalInstance => {
             const vNode = h(
                 FlourModal,
                 {
-                    title: options.title,
-                    message: options.message,
-                    intent: options.intent,
-                    defaultCTA: options.defaultCTA,
+                    ...options,
                     destroy: this.close
                 },
                 options.child !== null
@@ -40,6 +37,7 @@ export const useModal = (): UseModalInstance => {
                 return this.createModal({
                     ...options,
                     intent: INTENT_ERROR,
+                    defaultCTALabel: options.defaultCTALabel ?? 'Dismiss',
                 });
             }
         },
