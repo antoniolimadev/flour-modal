@@ -1,5 +1,5 @@
 # FlourModal
-An all purpose modal plugin for Vue 3. Easy to use and customise, with a modern but minimalist design. And you can use your own components alongside it!
+An all purpose modal plugin for Vue 3. Easy to use and customise, with a modern but minimalist design, and zero dependencies. And you can use your own components alongside it!
 
 ![NPM Downloads](https://img.shields.io/npm/d18m/flour-modal)
 [![npm-version](https://badgen.net/npm/v/flour-modal)](https://www.npmjs.com/package/flour-modal)
