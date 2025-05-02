@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import '@/styles/the-modal.scss';
-import {computed, onMounted, provide, ref } from "vue";
-import { onKeyStroke } from "@vueuse/core";
+import {computed, onMounted, onUnmounted, provide, ref} from "vue";
 import type { ModalIntent } from "../types/intent";
 import { INTENT_DEFAULT, INTENT_ERROR } from "../constants/intent";
 
@@ -37,7 +36,20 @@ let closeModal = (): void => {
 
 provide('closeModal', closeModal);
 
-onKeyStroke('Escape', () => closeModal());
+function closeOnEscape(event: KeyboardEvent): void {
+    if (! isVisible.value) {
+        return;
+    }
+
+    if (event.key !== 'Escape') {
+        return;
+    }
+
+    closeModal();
+}
+
+onMounted(() => document.addEventListener('keydown', closeOnEscape));
+onUnmounted(() => document.removeEventListener('keydown', closeOnEscape));
 
 const intentClass = computed(() => {
     switch (props.intent) {
