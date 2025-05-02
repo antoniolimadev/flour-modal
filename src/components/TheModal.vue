@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import '@/styles/the-modal.scss';
-import {computed, onMounted, provide, ref, useTemplateRef} from "vue";
-import { onClickOutside, onKeyStroke } from "@vueuse/core";
+import {computed, onMounted, onUnmounted, provide, ref} from "vue";
 import type { ModalIntent } from "../types/intent";
 import { INTENT_DEFAULT, INTENT_ERROR } from "../constants/intent";
 
@@ -37,10 +36,20 @@ let closeModal = (): void => {
 
 provide('closeModal', closeModal);
 
-const target = useTemplateRef<HTMLElement>('target');
+function closeOnEscape(event: KeyboardEvent): void {
+    if (! isVisible.value) {
+        return;
+    }
 
-onClickOutside(target, () => closeModal());
-onKeyStroke('Escape', () => closeModal());
+    if (event.key !== 'Escape') {
+        return;
+    }
+
+    closeModal();
+}
+
+onMounted(() => document.addEventListener('keydown', closeOnEscape));
+onUnmounted(() => document.removeEventListener('keydown', closeOnEscape));
 
 const intentClass = computed(() => {
     switch (props.intent) {
@@ -56,9 +65,11 @@ const intentClass = computed(() => {
 
 <template>
     <Transition name="modal">
-        <div v-if="isVisible" class="modal__mask">
+        <div v-if="isVisible" class="modal__background">
 
-            <div class="modal" ref="target">
+            <div class="modal__mask" @click="closeModal"></div>
+
+            <div class="modal">
                 <div class="modal__body">
                     <div class="modal__body-inner">
                         <h3 class="modal__title">
