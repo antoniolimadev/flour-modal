@@ -10,12 +10,14 @@ const props = withDefaults(defineProps<{
     message?: string,
     intent?: ModalIntent,
     defaultCTA?: boolean,
+    defaultCTALabel?: string,
     destroy: any,
 }>(), {
     title: '',
     message: '',
     intent: INTENT_DEFAULT,
     defaultCTA: true,
+    defaultCTALabel: 'OK',
     destroy: () => {},
 });
 
@@ -74,7 +76,7 @@ const intentClass = computed(() => {
 
                 <div v-if="defaultCTA" class="modal__footer">
                     <button type="button" @click="closeModal" class="modal__button" :class="intentClass">
-                        OK
+                        {{ defaultCTALabel }}
                     </button>
                 </div>
             </div>

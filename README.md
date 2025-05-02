@@ -31,6 +31,7 @@ const openModal = () => {
     modal.open({
         title: 'Awesome!',
         message: 'You have successfully installed the FlourModal plugin. Please press OK to continue.',
+        defaultCTALabel: 'Got it!',
     });
 };
 
@@ -46,7 +47,8 @@ export default defineComponent({
         openModal() {
             fModal().open({
                 title: 'Awesome!',
-                message: 'You have successfully installed the FlourModal plugin. Please press OK to continue.'
+                message: 'You have successfully installed the FlourModal plugin. Please press OK to continue.',
+                defaultCTALabel: 'Got it!'
             });
         },
     },
@@ -89,6 +91,7 @@ title | String    | Yes | -
 message | String    | Yes | -
 child | Component | Yes | -
 defaultCTA | boolean   | Yes | `true`
+defaultCTALabel | String   | Yes | `OK`
 intent | String | Yes | `default`
 
 ## Making the modal available globally
