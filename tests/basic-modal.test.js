@@ -12,6 +12,7 @@ describe('basic functionality', () => {
                 props: {
                     title,
                     message,
+                    destroy: () => {},
                 }
             });
 
@@ -27,6 +28,7 @@ describe('basic functionality', () => {
                 props: {
                     title,
                     message,
+                    destroy: () => {},
                 }
             });
 
@@ -43,6 +45,7 @@ describe('basic functionality', () => {
                     title,
                     message,
                     defaultCTALabel: 'Got it',
+                    destroy: () => {},
                 }
             });
 
@@ -58,6 +61,7 @@ describe('basic functionality', () => {
                     title,
                     message,
                     defaultCTA: false,
+                    destroy: () => {},
                 }
             });
 
